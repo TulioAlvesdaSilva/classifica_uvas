@@ -36,6 +36,9 @@ def carrega_imagem():
 
         return image
 
+
+
+
 def previsao(interpreter,image):
     # Obtém detalhes dos tensores de entrada e saída
     input_details = interpreter.get_input_details()
@@ -57,21 +60,25 @@ def previsao(interpreter,image):
              title='Probabilidade de Classes de Doenças em Uvas')
     st.plotly_chart(fig)
 
-
+#
 def main():
-
     st.set_page_config(
-        page_title="Classificaçâo de Folhas",
+        page_title="Classifica Folhas de Videira",
+        page_icon="🍇",
     )
-    st.write('#Classificacao de Folhas')
-    # carrgea o modelo
-    interpreter=carrega_modelo()
-    # carrega imagem
-    image=carrega_imagem
-    # Classifica
+    
+    st.write("# Classifica Folhas de Videira! 🍇")
+    
+
+    interpreter = carrega_modelo()
+
+    image = carrega_imagem()
+
     if image is not None:
-        previsao(interpreter, image)
+
+        previsao(interpreter,image)
+    
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main()
