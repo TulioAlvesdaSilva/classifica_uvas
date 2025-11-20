@@ -8,7 +8,7 @@ import pandas as pd
 import plotly.express as px
 
 
-@st.cache.resource
+@st.cache_resource
 def carrega_modelo():
     #https://drive.google.com/file/d/1c2r8KhXlLqi5d3yq3L2ZYu41Z2vKejpe/view?usp=drive_link
     url='https://drive.google.com/uc?id=1c2r8KhXlLqi5d3yq3L2ZYu41Z2vKejpe'
